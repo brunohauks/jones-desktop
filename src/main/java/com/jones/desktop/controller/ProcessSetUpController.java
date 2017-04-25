@@ -1,5 +1,6 @@
 package com.jones.desktop.controller;
 
+import com.jones.desktop.entity.Page;
 import com.jones.desktop.util.PageEnum;
 import com.jones.desktop.util.SceneCreator;
 import javafx.event.ActionEvent;
@@ -139,15 +140,18 @@ public class ProcessSetUpController {
    */
   @FXML
   protected void startProcess(ActionEvent event) throws Exception {
-    File template = new File(labelSelectedTemplate.getText());
-    File folder = new File(labelSelectedFolder.getText());
-
-    Stage primaryStage = (Stage) startProcessButton.getScene().getWindow();
     Scene scene = labelNoFilesFound.getScene();
+    Page processDetailsPage = new Page(PageEnum.PROCESS_DETAILS);
 
-    SceneCreator.updateScene(scene, PageEnum.PROCESS_DETAILS);
+    //set the input parameters in the controller
+    ProcessDetailsController controller = (ProcessDetailsController) processDetailsPage.getController();
+    controller.setFolder(selectedFolder.getText());
+    controller.setTemplateFolder(selectedTemplate.getText());
+    controller.setTypeNFe(NFe.isSelected());
 
+    //updates scene with process details
+    SceneCreator.updateScene(scene, processDetailsPage);
 
-
+    controller.startProcess();
   }
 }

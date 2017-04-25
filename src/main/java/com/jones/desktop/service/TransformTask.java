@@ -1,9 +1,7 @@
 package com.jones.desktop.service;
 
+import com.jones.desktop.controller.ProcessDetailsController;
 import javafx.concurrent.Task;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextArea;
-import javafx.scene.text.Text;
 
 import java.io.File;
 
@@ -14,27 +12,21 @@ import java.io.File;
  */
 public class TransformTask extends Task<Void> {
 
-  Text processedXMLNumber;
-  Text processedXMLErrorNumber;
-  TextArea processInfoTextArea;
-  ProgressBar progressBar;
+  ProcessDetailsController processDetailsController;
   File template;
-  File processFolder;
+  File xmlFolder;
   Boolean NFe;
 
-  public TransformTask(Text processedXMLNumber, Text processedXMLErrorNumber, TextArea processInfoTextArea, ProgressBar progressBar, File template, File processFolder, Boolean NFe) {
-    this.processedXMLNumber = processedXMLNumber;
-    this.processedXMLErrorNumber = processedXMLErrorNumber;
-    this.processInfoTextArea = processInfoTextArea;
-    this.progressBar = progressBar;
-    this.template = template;
-    this.processFolder = processFolder;
-    this.NFe = NFe;
+  public TransformTask(ProcessDetailsController processDetailsController) {
+    this.processDetailsController = processDetailsController;
+    this.template = new File (processDetailsController.getTemplateFolder());
+    this.xmlFolder = new File (processDetailsController.getFolder());
+    this.NFe = processDetailsController.getTypeNFe();
   }
 
   @Override
   protected Void call() throws Exception {
-
+    processDetailsController.updateDetails();
     return null;
   }
 }

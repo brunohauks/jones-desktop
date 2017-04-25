@@ -51,13 +51,16 @@ public class SceneCreator {
     return scene;
   }
 
-  public static void updateScene(Scene currentScene, PageEnum displayPage) throws IOException {
-
-    // get main page
-    Pane main = new Page(displayPage).getPane();
-
+  /**
+   * updates scene from an alreayd created page object
+   * @param currentScene
+   * @param pageToDisplay
+   * @return
+   * @throws IOException
+   */
+  public static void updateScene(Scene currentScene, Page pageToDisplay) throws IOException {
     // get reference of Pane to be added to the template.
-    Node mainNode = main.lookup("#content");
+    Node mainNode = pageToDisplay.getPane().lookup("#content");
 
     AnchorPane origMain = (AnchorPane) currentScene.lookup("#main");
     // set contents of "mainPage" into the template

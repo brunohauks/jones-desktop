@@ -3,7 +3,6 @@ package com.jones.desktop.entity;
 import com.jones.desktop.util.PageEnum;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
@@ -31,10 +30,10 @@ public class Page {
     ResourceBundle bundle = ResourceBundle.getBundle("scenes/main/main", locale);
 
     this.pageResource = pageResource;
-    loader = new FXMLLoader();
-    loader.setBuilderFactory(new JavaFXBuilderFactory());
-    loader.setLocation(this.getClass().getClassLoader().getResource(this.pageResource.getLocation()));
-    pane = loader.load(this.getClass().getClassLoader().getResource(this.pageResource.getLocation()), bundle);
+    loader = new FXMLLoader(this.getClass().getClassLoader().getResource(this.pageResource.getLocation()), bundle);
+//    loader.setBuilderFactory(new JavaFXBuilderFactory());
+//    loader.setLocation(this.getClass().getClassLoader().getResource(this.pageResource.getLocation()));
+    pane = loader.load();
     controller = loader.getController();
   }
 
@@ -48,6 +47,10 @@ public class Page {
 
   public Object getController() {
     return controller;
+  }
+
+  public void setController(Object controller){
+    loader.setController(controller);
   }
 
   public void setController(Initializable controller) {
