@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FlowPane prefHeight="688.0" prefWidth="997.0">
+               <children>
+                  <AnchorPane prefHeight="178.0" prefWidth="997.0">
+                     <children>
+                        <MenuBar prefHeight="29.0" prefWidth="997.0">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="File">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Close" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Edit">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Help">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                              </items>
+                            </Menu>
+                          </menus>
+                        </MenuBar>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="main" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="430.0" prefWidth="998.0">
+                     <children>
+                        <CheckBox layoutX="57.0" layoutY="60.0" mnemonicParsing="false" text="CheckBox" />
+                        <Button layoutX="220.0" layoutY="66.0" mnemonicParsing="false" text="Button" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="80.0" prefWidth="997.0" />
+               </children>
+            </FlowPane>
+         </children>
+      </Pane>
+   </children>
+  <stylesheets>
+    <URL value="@../default/default.css" />
+  </stylesheets>
+</AnchorPane>

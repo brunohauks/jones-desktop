@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="710.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jones.desktop.controller.ProcessSetUpController">
+  <children>
+    <SplitPane id="content" dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <items>
+        <AnchorPane id="selectFolder">
+          <children>
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="14.0" layoutY="14.0" minWidth="37.0" prefHeight="63.0" prefWidth="37.0" style="&#10;" text="1" textAlignment="CENTER" wrapText="false" AnchorPane.rightAnchor="0.0">
+              <font>
+                <Font size="52.0" fx:id="x1" />
+              </font>
+              <textFill>
+                <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
+              </textFill>
+            </Label>
+            <VBox alignment="CENTER" layoutX="179.0" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <Label fx:id="labelNoFilesFound" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="15.0" prefWidth="256.0" text="%process.no.files.found.in.folder" textFill="#202472" visible="false" />
+                <Button mnemonicParsing="false" onAction="#selectFolder" text="%button.choose.folder" />
+                <Label fx:id="labelSelectedFolder" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="15.0" prefWidth="252.0" text="%process.selected.folder" textFill="#202472" visible="false" />
+                <Text fx:id="selectedFolder">
+                  <font>
+                    <Font name="System Bold" size="13.0" />
+                  </font>
+                </Text>
+                <Label fx:id="labelTotalNumberOfXml" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="15.0" prefWidth="252.0" text="%process.total.number.of.xml" textFill="#202472" visible="false" />
+                <Text fx:id="totalNumberOfXml">
+                  <font>
+                    <Font name="System Bold" size="13.0" />
+                  </font>
+                </Text>
+                <Label fx:id="labelTotalNumberOfNFEXml" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="15.0" prefWidth="249.0" text="%process.total.number.of.nfe.xml" textFill="#202472" visible="false" />
+                <Text fx:id="totalNumberOfNFEXml">
+                  <font>
+                    <Font name="System Bold" size="13.0" />
+                  </font>
+                </Text>
+                <Label fx:id="labelTotalNumberOfCTEXml" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="15.0" prefWidth="247.0" text="%process.total.number.of.cte.xml" textFill="#202472" visible="false" />
+                <Text fx:id="totalNumberOfCTEXml">
+                  <font>
+                    <Font name="System Bold" size="13.0" />
+                  </font>
+                </Text>
+              </children>
+              <padding>
+                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+              </padding>
+            </VBox>
+          </children>
+        </AnchorPane>
+        <AnchorPane fx:id="chooseSetUp" disable="true" minHeight="-1.0" minWidth="-1.0" prefHeight="710.0" prefWidth="430.0">
+          <children>
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" font="$x1" layoutX="14.0" layoutY="14.0" prefHeight="46.0" prefWidth="378.0" style="&#10;" text="2" textAlignment="CENTER" textFill="$x2" wrapText="false" AnchorPane.rightAnchor="0.0">
+              <font>
+                <Font size="15.0" fx:id="x3" />
+              </font>
+              <textFill>
+                <Color blue="0.624" green="0.624" red="0.624" fx:id="x4" />
+              </textFill>
+            </Label>
+            <VBox alignment="CENTER" layoutX="179.0" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <Label text="%label.text.choose.xml.type" />
+                <RadioButton id="NFe" fx:id="NFe" mnemonicParsing="false" selected="true" text="NFe">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="xmlType" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton id="CTe" fx:id="CTe" mnemonicParsing="false" text="CTe" toggleGroup="$xmlType" />
+                <Separator prefHeight="46.0" prefWidth="378.0" />
+                <Button mnemonicParsing="false" onAction="#selectTemplate" text="%button.choose.xls.template" />
+                <Label fx:id="labelSelectedTemplate" text="%label.text.selected.template" textFill="#202472" visible="false" />
+                <Text fx:id="selectedTemplate" strokeType="OUTSIDE" strokeWidth="0.0">
+                  <font>
+                    <Font name="System Bold" size="13.0" />
+                  </font>
+                </Text>
+              </children>
+              <padding>
+                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+              </padding>
+            </VBox>
+          </children>
+        </AnchorPane>
+        <AnchorPane id="startProcess" fx:id="startProcess" disable="true">
+          <children>
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" font="$x1" layoutX="14.0" layoutY="14.0" prefHeight="63.0" prefWidth="37.0" style="&#10;" text="3" textAlignment="CENTER" textFill="$x2" wrapText="false" AnchorPane.rightAnchor="0.0">
+              <font>
+                <Font size="15.0" fx:id="x5" />
+              </font>
+              <textFill>
+                <Color blue="0.624" green="0.624" red="0.624" fx:id="x6" />
+              </textFill>
+            </Label>
+            <VBox alignment="CENTER" layoutX="179.0" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+                <Button fx:id="startProcessButton" mnemonicParsing="false" onAction="#startProcess" text="%button.start.process" textFill="#32975f">
+                  <font>
+                    <Font name="System Bold" size="18.0" />
+                  </font>
+                </Button>
+              </children>
+              <padding>
+                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+              </padding>
+            </VBox>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </children>
+</AnchorPane>

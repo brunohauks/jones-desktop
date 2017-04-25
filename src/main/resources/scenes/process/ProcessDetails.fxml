@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="710.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jones.desktop.controller.ProcessSetUpController">
+  <children>
+    <VBox id="content" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" spacing="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <padding>
+        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+      </padding>
+      <children>
+        <Label fx:id="numberOfProcessedXMLFiles" text="Label" />
+        <TableView prefHeight="426.0" prefWidth="845.0">
+          <columns>
+            <TableColumn prefWidth="75.0" text="C1" />
+            <TableColumn prefWidth="75.0" text="C2" />
+          </columns>
+        </TableView>
+        <ProgressBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="622.0" progress="0.0" />
+        <Button mnemonicParsing="false" text="Button" />
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

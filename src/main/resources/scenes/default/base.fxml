@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<AnchorPane id="anchorPaneMainRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: linear-gradient(to bottom, #486989 0, #fff 100%);" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <children>
+    <Pane AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" layoutX="14.0" layoutY="14.0" prefHeight="740.0" prefWidth="996.0" style="-fx-background-color: white;&#10;-fx-border-radius: 20;&#10;-fx-background-radius: 20;">
+      <children>
+        <FlowPane prefHeight="733.0" prefWidth="996.0">
+          <children>
+            <AnchorPane id="top" prefHeight="175.0" prefWidth="996.0">
+               <children>
+                 <fx:include source="top.fxml" />
+                        <MenuBar prefHeight="29.0" prefWidth="996.0">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="File">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Close" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Edit">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Help">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                              </items>
+                            </Menu>
+                          </menus>
+                        </MenuBar>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="main" prefHeight="474.0" prefWidth="867.0">
+               <children>
+                 <TextField id="dummyTxt" layoutX="123.0" layoutY="112.0" text="This is Text Field in template" />
+               </children>
+            </AnchorPane>
+            <AnchorPane id="right" prefHeight="474.0" prefWidth="129.0">
+               <children>
+                 <fx:include source="right.fxml" />
+               </children>
+            </AnchorPane>
+            <AnchorPane id="bottom" prefHeight="77.0" prefWidth="996.0">
+               <children>
+                 <fx:include source="bottom.fxml" />
+               </children>
+            </AnchorPane>
+          </children>
+        </FlowPane>
+      </children>
+    </Pane>
+  </children>
+
+  <stylesheets>
+    <URL value="@../default/default.css" />
+  </stylesheets>
+</AnchorPane>

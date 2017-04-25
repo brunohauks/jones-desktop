@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="766.0" prefWidth="1107.0" styleClass="root" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jones.desktop.controller.LoginController">
+   <padding>
+      <Insets bottom="10" left="25" right="25" top="25" />
+   </padding>
+   <children>
+      <Text id="welcome-text" text="Jones" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+         <font>
+            <Font size="22.0" />
+         </font></Text>
+   
+      <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <ProgressBar fx:id="progressBar" prefHeight="20.0" prefWidth="363.0" progress="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="363.0" text="Desktop" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="364.0" text="%label.preloader.info" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="363.0" text="%label.preloader.disclaimer" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+   </children>
+
+   <stylesheets>
+      <URL value="@SplashScreen.css" />
+   </stylesheets>
+
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
