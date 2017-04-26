@@ -152,6 +152,6 @@ public class ProcessSetUpController {
     //updates scene with process details
     SceneCreator.updateScene(scene, processDetailsPage);
 
-    controller.startProcess();
+    controller.startProcess(new Double(totalNumberOfXml.getText()));
   }
 }

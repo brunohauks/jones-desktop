@@ -43,6 +43,7 @@ public class TransformTask extends Task<Void> {
     String processId = String.valueOf(new Random().nextInt(90000) + 10000);
     //if the base spreadsheet is not uploaded, uses the template
     InputStream in = this.getClass().getClassLoader().getResourceAsStream("template.xlsx");
+    File generatedFile = new File("jones_" + processId + ".xlsx");
     try {
       if (template != null) {
         in = new FileInputStream(template);
@@ -110,9 +111,11 @@ public class TransformTask extends Task<Void> {
         }
       }
 
-      FileOutputStream outFile = new FileOutputStream(new File("jones_" +processId+ ".xlsx"));
+      FileOutputStream outFile = new FileOutputStream(generatedFile);
       workbook.write(outFile);
       outFile.close();
+      logger.info("Process Completed. Generated File: " + generatedFile.getAbsolutePath());
+      processDetailsController.finishProcess(generatedFile);
     } catch (IOException e) {
       logger.error("Error while writing XLS file to disk: " + e.getMessage());
       e.printStackTrace();
