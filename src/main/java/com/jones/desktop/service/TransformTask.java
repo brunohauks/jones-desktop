@@ -17,6 +17,8 @@ public class TransformTask extends Task<Void> {
   File xmlFolder;
   Boolean NFe;
 
+  XLSManager xlsManager = new XLSManager();
+
   public TransformTask(ProcessDetailsController processDetailsController) {
     this.processDetailsController = processDetailsController;
     this.template = new File (processDetailsController.getTemplateFolder());
@@ -26,7 +28,11 @@ public class TransformTask extends Task<Void> {
 
   @Override
   protected Void call() throws Exception {
-    processDetailsController.updateDetails();
+
+
     return null;
   }
+
+
+
 }
