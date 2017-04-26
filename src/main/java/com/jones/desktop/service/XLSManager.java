@@ -24,7 +24,7 @@ public class XLSManager {
 //    new XLSManager().createSpreadSheet("125685");
   }
 
- 
+
   public void createResultsSpreadSheet(List<Nfe> nfeList, File template) throws IOException {
     //if the base spreadsheet is not uploaded, uses the template
     InputStream in;
@@ -55,10 +55,10 @@ public class XLSManager {
     for (int i = 0; i < nfeList.size(); i++) {
       Nfe nfe = nfeList.get(i);
       if (nfe instanceof com.jones.desktop.entity.nfe.v310.TNfeProc) {
-        buildRow310(nfeMap, i, nfe);
+        nfeMap.put(String.valueOf(i), buildRow310(nfe));
       }
       if (nfe instanceof com.jones.desktop.entity.nfe.v200.TNfeProc) {
-        buildRow200(nfeMap, i, nfe);
+        nfeMap.put(String.valueOf(i), buildRow200(nfe));
       }
     }
     return nfeMap;
@@ -83,9 +83,9 @@ public class XLSManager {
     }
   }
 
-  private void buildRow310(Map<String, Object[]> nfeMap, Integer index, Nfe nfe) {
+  public Object[] buildRow310(Nfe nfe) {
     com.jones.desktop.entity.nfe.v310.TNfeProc nfe310 = (com.jones.desktop.entity.nfe.v310.TNfeProc) nfe;
-    nfeMap.put(index.toString(), new Object[]{
+    return new Object[]{
             nfe310.getNFe().getInfNFe().getIde().getCUF(),
             nfe310.getNFe().getInfNFe().getIde().getNatOp(),
             nfe310.getNFe().getInfNFe().getIde().getCNF(),
@@ -135,13 +135,13 @@ public class XLSManager {
             nfe310.getNFe().getInfNFe().getDest().getEnderDest().getCEP(),
             nfe310.getNFe().getInfNFe().getDest().getEnderDest().getCPais(),
             nfe310.getNFe().getInfNFe().getDest().getEnderDest().getFone()
-    });
+    };
   }
 
 
-  private void buildRow200(Map<String, Object[]> empinfo, Integer index, Nfe nfe) {
+  public Object[] buildRow200(Nfe nfe) {
     com.jones.desktop.entity.nfe.v200.TNfeProc nfe200 = (com.jones.desktop.entity.nfe.v200.TNfeProc) nfe;
-    empinfo.put(index.toString(), new Object[]{
+    return new Object[]{
             nfe200.getNFe().getInfNFe().getIde().getCUF(),
             nfe200.getNFe().getInfNFe().getIde().getNatOp(),
             nfe200.getNFe().getInfNFe().getIde().getCNF(),
@@ -187,7 +187,7 @@ public class XLSManager {
             nfe200.getNFe().getInfNFe().getDest().getEnderDest().getXBairro(),
             nfe200.getNFe().getInfNFe().getDest().getEnderDest().getCMun(),
             nfe200.getNFe().getInfNFe().getDest().getEnderDest().getXMun()
-    });
+    };
   }
 
 }
