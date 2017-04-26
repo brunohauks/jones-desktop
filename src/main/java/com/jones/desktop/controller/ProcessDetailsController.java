@@ -1,9 +1,12 @@
 package com.jones.desktop.controller;
 
+import com.jones.desktop.entity.nfe.Nfe;
 import com.jones.desktop.service.TransformTask;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import javafx.scene.text.Text;
+
+import java.io.File;
 
 /**
  * User: bbonfim
@@ -31,10 +34,24 @@ public class ProcessDetailsController {
     new Thread(transformTask).start();
   }
 
-  public void updateDetails(){
-    totalNumberOfXmlFiles.setText("121212");
-    numberOfXmlProcessedWithNoErrors.setText("4444");
-    totalNumberOfXmlWithError.setText("233333");
+  public void updateDetails(File child, Nfe nfe, Boolean statusOK, String message){
+    //figure out number of processed xml
+    String totalNumberOfXmlFilesText = totalNumberOfXmlFiles.getText();
+    Integer totalNumberOfProcessedXml = totalNumberOfXmlFilesText.isEmpty() ? 1 : Integer.parseInt(totalNumberOfXmlFilesText) + 1;
+    totalNumberOfXmlFiles.setText(totalNumberOfProcessedXml.toString());
+
+    if(statusOK){
+      //figure out number of successfully processed xml files
+      String totalNumberOfXmlWithNoErrorText = numberOfXmlProcessedWithNoErrors.getText();
+      Integer totalNumberOfXmlWithNoError = totalNumberOfXmlWithNoErrorText.isEmpty() ? 1 : Integer.parseInt(totalNumberOfXmlWithNoErrorText) + 1;
+      numberOfXmlProcessedWithNoErrors.setText(totalNumberOfXmlWithNoError.toString());
+    }else{
+      //figure out number of successfully processed xml files
+      String totalNumberOfXmlWithErrorText = totalNumberOfXmlWithError.getText();
+      Integer totalNumberOfXmlWithErrorValue = totalNumberOfXmlWithErrorText.isEmpty() ? 1 : Integer.parseInt(totalNumberOfXmlWithErrorText) + 1;
+      totalNumberOfXmlWithError.setText(totalNumberOfXmlWithErrorValue.toString());
+    }
+
   }
 
   public void setFolder(String folder) {
