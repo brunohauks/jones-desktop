@@ -45,7 +45,7 @@ public class TransformTask extends Task<Void> {
     InputStream in = this.getClass().getClassLoader().getResourceAsStream("template.xlsx");
     File generatedFile = new File("jones_" + processId + ".xlsx");
     try {
-      if (template != null) {
+      if (template != null && template.exists()) {
         in = new FileInputStream(template);
       }
 

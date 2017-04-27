@@ -104,6 +104,7 @@ public class ProcessSetUpController {
         labelTotalNumberOfXml.setVisible(true);
 
         chooseSetUp.setDisable(false);
+        startProcess.setDisable(false);
       }else{
         labelNoFilesFound.setVisible(true);
       }
@@ -128,7 +129,6 @@ public class ProcessSetUpController {
       //set selected file
       selectedTemplate.setText(templateFile.getAbsolutePath());
       labelSelectedTemplate.setVisible(true);
-      startProcess.setDisable(false);
       logger.info("selected template File: " + templateFile.getAbsolutePath());
     }
   }

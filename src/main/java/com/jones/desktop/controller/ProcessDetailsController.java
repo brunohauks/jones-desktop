@@ -53,8 +53,8 @@ public class ProcessDetailsController implements Initializable{
   public void updateDetails(File file, Nfe nfe, Boolean statusOK, String message){
     //figure out number of processed xml
     String totalNumberOfXmlFilesText = totalNumberOfXmlFiles.getText();
-    Integer totalNumberOfProcessedXml = totalNumberOfXmlFilesText.isEmpty() ? 1 : Integer.parseInt(totalNumberOfXmlFilesText) + 1;
-    totalNumberOfXmlFiles.setText(totalNumberOfProcessedXml.toString());
+    Integer totalNumberOfProcessedXml = totalNumberOfXmlFilesText.isEmpty() ? 1 : Integer.parseInt(totalNumberOfXmlFilesText.split("/")[0].trim()) + 1;
+    totalNumberOfXmlFiles.setText(totalNumberOfProcessedXml.toString() +" / " + String.valueOf(totalXmlNumber.intValue()));
 
     if(statusOK){
       //figure out number of successfully processed xml files
@@ -62,7 +62,7 @@ public class ProcessDetailsController implements Initializable{
       Integer totalNumberOfXmlWithNoError = totalNumberOfXmlWithNoErrorText.isEmpty() ? 1 : Integer.parseInt(totalNumberOfXmlWithNoErrorText) + 1;
       numberOfXmlProcessedWithNoErrors.setText(totalNumberOfXmlWithNoError.toString());
     }else{
-      //figure out number of successfully processed xml files
+      //figure out number of xml with errors
       String totalNumberOfXmlWithErrorText = totalNumberOfXmlWithError.getText();
       Integer totalNumberOfXmlWithErrorValue = totalNumberOfXmlWithErrorText.isEmpty() ? 1 : Integer.parseInt(totalNumberOfXmlWithErrorText) + 1;
       totalNumberOfXmlWithError.setText(totalNumberOfXmlWithErrorValue.toString());
@@ -77,11 +77,16 @@ public class ProcessDetailsController implements Initializable{
   }
 
   public void setOpenGeneratedFile(){
-    try {
-      Desktop.getDesktop().open(generatedFile);
-    } catch (IOException e) {
-      logger.error("Error while opening generated file: " + e.getMessage());
-      e.printStackTrace();
+
+    if( Desktop.isDesktopSupported() )
+    {
+      new Thread(() -> {
+        try {
+          Desktop.getDesktop().open(generatedFile);
+        } catch (IOException e) {
+          logger.error("Error while opening generated file: " + e.getMessage());
+        }
+      }).start();
     }
   }
 

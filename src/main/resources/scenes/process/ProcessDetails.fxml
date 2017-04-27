@@ -14,19 +14,19 @@
         <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
       </padding>
       <children>
-        <HBox prefHeight="22.0" prefWidth="845.0">
+        <HBox prefHeight="18.0" prefWidth="845.0">
           <children>
-            <Label text="%label.process.details.number.of.processed.xml" />
-            <Text fx:id="totalNumberOfXmlFiles" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Separator orientation="VERTICAL" prefHeight="200.0" />
-            <Label text="%label.process.details.total.errors" />
-            <Text fx:id="totalNumberOfXmlWithError" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Separator orientation="VERTICAL" prefHeight="200.0" />
-            <Label text="%label.process.details.number.xml.done.success" />
-            <Text fx:id="numberOfXmlProcessedWithNoErrors" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Label prefHeight="18.0" prefWidth="218.0" text="%label.process.details.number.of.processed.xml" HBox.hgrow="ALWAYS" />
+            <Text fx:id="totalNumberOfXmlFiles" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="84.0" />
+            <Separator orientation="VERTICAL" prefHeight="18.0" prefWidth="67.0" />
+            <Label prefHeight="18.0" prefWidth="215.0" text="%label.process.details.total.errors" />
+            <Text fx:id="totalNumberOfXmlWithError" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Separator orientation="VERTICAL" prefHeight="18.0" prefWidth="69.0" />
+            <Label prefHeight="18.0" prefWidth="305.0" text="%label.process.details.number.xml.done.success" />
+            <Text fx:id="numberOfXmlProcessedWithNoErrors" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="37.0" />
           </children>
         </HBox>
-        <TableView fx:id="detailsDataTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="845.0" VBox.vgrow="ALWAYS">
+        <TableView fx:id="detailsDataTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="581.0" prefWidth="845.0" VBox.vgrow="ALWAYS">
           <!--<columns>-->
           <!--<TableColumn prefWidth="75.0" text="%label.process.table.header.file" />-->
           <!--<TableColumn prefWidth="75.0" text="%label.process.table.header.cnpj" />-->
@@ -38,7 +38,7 @@
           </columnResizePolicy>
         </TableView>
         <ProgressBar fx:id="progressBar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="622.0" progress="0.0" />
-        <Button fx:id="openGeneratedFile" onAction="#setOpenGeneratedFile" alignment="CENTER" contentDisplay="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="269.0" text="%label.button.get.generated.file" VBox.vgrow="NEVER">
+        <Button fx:id="openGeneratedFile" alignment="CENTER" contentDisplay="CENTER" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#setOpenGeneratedFile" prefHeight="25.0" prefWidth="269.0" text="%label.button.get.generated.file" VBox.vgrow="NEVER">
           <VBox.margin>
             <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
           </VBox.margin>

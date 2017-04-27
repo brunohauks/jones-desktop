@@ -59,6 +59,8 @@ public class SceneCreator {
    * @throws IOException
    */
   public static void updateScene(Scene currentScene, Page pageToDisplay) throws IOException {
+    ((Stage) currentScene.getWindow()).setTitle("Jones - Desktop");
+
     // get reference of Pane to be added to the template.
     Node mainNode = pageToDisplay.getPane().lookup("#content");
 
